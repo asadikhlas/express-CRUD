@@ -10,6 +10,9 @@ app.use(bodyParser());
 app.use(morgan("dev"));
 
 
+app.get('/', (req, res)=> {
+  res.send('welcome to heroku app')
+})
 
 app.post("/login", (req, res) => {
   const user = [
