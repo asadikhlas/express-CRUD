@@ -2,12 +2,18 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
+const cors = require('cors');
+
 
 const app = express();
 
 app.use(cookieParser());
 app.use(bodyParser());
 app.use(morgan("dev"));
+app.use(cors());
+
+
+app.get('*', cors());
 
 
 app.get('/', (req, res)=> {
